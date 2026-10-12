@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compilar y ejecutar",
+            "type": "process",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/ejecutar.ps1", "-Archivo", "${file}"],
+            "group": { "kind": "build", "isDefault": true },
+            "presentation": { "reveal": "always", "focus": true, "panel": "dedicated", "clear": true },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "label": "Solo compilar",
+            "type": "process",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/ejecutar.ps1", "-Archivo", "${file}", "-SoloCompilar"],
+            "presentation": { "reveal": "silent", "panel": "dedicated", "clear": true },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
